@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+
+        <header class="header clearfix">
+            <a class="logo" id="logo-back" data-target="page-home">
+                <span class="logo-dobra"></span>
+            </a>
+            <h1>Notas</h1>
+        </header>
+
+        <div class="page-wrap">
+
+            <div class="page current" id="page-home">
+                <form class="add-form">
+                    <input type="text" class="box box-skin" id="add" placeholder="Adicionar nota" data-target="page-editnote">
+                    <button type="button" id="add-btn" class="transparent">Ok</button>
+                </form>
+                
+                <section class="notas-list clearfix">
+                    <!--<article class="box-skin nota-thumb" id="note1">
+                        <p class="nota-title" contenteditable>HTML5</p>
+                        <p class="nota-text" contenteditable>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam enim leo, egestas id, condimentum at, laoreet mattis, massa. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam enim leo, egestas id, condimentum at, laoreet mattis, massa.</p>
+                    </article>-->
+                </section>
+            </div>
+        </div>
+
+        <script src="js/jquery2.0.3.min.js"></script>
+        <script src="js/script.js"></script>
+
+    </body>
+</html>
