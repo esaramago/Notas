@@ -19,8 +19,8 @@
         </header>
 
         <div class="page-wrap">
-
             <div class="page current" id="page-home">
+                <a href="javascript:void(0)" onclick="checkLanguage()">Click for locale</a>
                 <form class="add-form">
                     <input type="text" class="box box-skin" id="add" placeholder="Adicionar nota" data-target="page-editnote">
                     <button type="button" id="add-btn" class="transparent">Ok</button>
@@ -28,14 +28,16 @@
                 
                 <section class="notas-list clearfix">
                     <!--<article class="box-skin nota-thumb" id="note1">
-                        <p class="nota-title" contenteditable>HTML5</p>
-                        <p class="nota-text" contenteditable>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam enim leo, egestas id, condimentum at, laoreet mattis, massa. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam enim leo, egestas id, condimentum at, laoreet mattis, massa.</p>
+                        <pre class="nota-title" contenteditable>HTML5</pre>
+                        <pre class="nota-text" contenteditable>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam enim leo, egestas id, condimentum at, laoreet mattis, massa. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam enim leo, egestas id, condimentum at, laoreet mattis, massa.</pre>
                     </article>-->
                 </section>
             </div>
         </div>
 
-        <script src="js/jquery2.0.3.min.js"></script>
+        <script src="js/vendor/cordova-2.9.0.js"></script>
+        <!--<script src="js/vendor/cordova-2.0.0.js"></script>-->
+        <script src="js/vendor/jquery2.0.3.min.js"></script>
         <script src="js/script.js"></script>
 
     </body>

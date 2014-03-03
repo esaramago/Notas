@@ -12,20 +12,20 @@
 
 
 /* 1. Reset */
-h1, input, button, p {margin: 0;padding: 0; border: 0; outline: 0;}
+h1, input, button, p, pre {margin: 0;padding: 0; border: 0; outline: 0;}
 
-input,
-textarea {
+input {
 	width: 100%;
 	box-sizing: border-box;
 	background-color: transparent;
+}
+input,
+textarea,
+pre {
 	font-family: "Trebuchet MS", sans-serif;
 }
 ::-webkit-input-placeholder {
 	font-style: italic;
-}
-[contenteditable] {
-	outline: 0;
 }
 
 /* 2. Globals */
@@ -103,26 +103,6 @@ body {
 	margin-right: 10px;
 	background-color: #f9ec12;
 	box-shadow: 0 1px 2px #BBB;
-}
-#logo-back:before,
-#logo-back:after {
-	content: '';
-	position: absolute;
-	top: 12px;
-	left: -12px;
-	display: block;
-	width: 10px;
-	height: 2px;
-	background-color: #555;
-}
-#logo-back:before {
-	-webkit-transform: rotate(-45deg);
-	transform: rotate(-45deg);
-}
-#logo-back:after {
-	margin-top: 6px;
-	-webkit-transform: rotate(45deg);
-	transform: rotate(45deg);
 }
 .logo-dobra {
 	position: absolute;
@@ -231,7 +211,7 @@ body {
 	width: 35px;
 	height: 35px;
 	background-color: #f9ec12;
-	font-style: italic;
+	box-shadow: 0 1px 2px #DDD;
 	text-decoration: none;
 	text-align: center;
 	line-height: 35px;

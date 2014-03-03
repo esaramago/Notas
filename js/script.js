@@ -1,4 +1,18 @@
 
+var watchID = null;
+document.addEventListener("deviceready", onDeviceReady, false);
+
+function onDeviceReady() {
+    console.log('Device ready!');
+}
+function checkLanguage() {
+  	navigator.globalization.getPreferredLanguage(
+	    function (language) {alert('language: ' + language.value + '\n');},
+	    function () {alert('Error getting language\n');}
+	);
+}
+
+
 $(function() {
 	getLocalStorage();
 	displayThumbs();
@@ -13,7 +27,16 @@ $(function() {
 		setLocalStorage($(this).closest('.nota-thumb'));
 	});
 
-	addNote();
+	toggleAddBtn();
+	$('#add-btn').on('click', function() {
+		addNote();
+	});
+	$('#add').keydown(function(e) {
+		if (e.keyCode == 13) {
+			e.preventDefault();
+			addNote();
+		}
+	});
 	deleteNote();
 
 });
@@ -88,6 +111,7 @@ function setLocalStorage(el) {
 };
 
 
+
 // ===========================================================================================
 // Abrir nota
 // ===========================================================================================
@@ -124,58 +148,61 @@ function setNoteInactive() {
 // Adicionar nota
 // ===========================================================================================
 
+
 function addNote() {
-	$('#add-btn').on('click', function() {
-		
-		var value = $('#add').val();
-		if (value != '') {
+	
+	var value = $('#add').val();
+	if (value != '') {
 
-			if (localStorage.getItem('last-id') === null) {
-				var new_id = 6;
-				localStorage.setItem('last-id', new_id);
-			}
-			else {
-				var last_id = localStorage.getItem('last-id');
-				var new_id = parseInt(last_id)+1;
-			}
-			$('.notas-list').prepend('\
-				<article class="box-skin nota-thumb" id="note'+ new_id +'">\
-    				<a href="#" class="nota-delete">X</a>\
-					<div class="nota-content">\
-						<p class="nota-title empty" contenteditable></p>\
-	                    <p class="nota-text" contenteditable>'+ value +'</p>\
-	                </div>\
-				</article>\
-			');
-			var $this = $('#note'+new_id);
-
-			// fadeIn note
-			setTimeout(function() {
-				$this.removeClass('transparent');
-			}, 200);
-
-			// clean input and hide btn
-			$('#add').val('');
-
-			// store added note
-			setLocalStorage($this);
-
-			// store next id
-			var next_id = localStorage.setItem('last-id', new_id);
-
-			setNoteActive();
-			setTimeout(function() {
-				$this.click();
-			}, 200);
-
-			// reiniciar o localStorage
-			$this.find('.nota-title, .nota-text').keyup(function() {
-				hideEmptyfields($(this));
-				setLocalStorage($this);
-			});
-			deleteNote();
+		if (localStorage.getItem('last-id') === null) {
+			var new_id = 6;
+			localStorage.setItem('last-id', new_id);
 		}
-	});
+		else {
+			var last_id = localStorage.getItem('last-id');
+			var new_id = parseInt(last_id)+1;
+		}
+		$('.notas-list').prepend('\
+			<article class="box-skin nota-thumb" id="note'+ new_id +'">\
+				<a href="#" class="nota-delete">X</a>\
+				<div class="nota-content">\
+					<pre class="nota-title empty" contenteditable></pre>\
+                    <pre class="nota-text" contenteditable>'+ value +'</pre>\
+                </div>\
+			</article>\
+		');
+		var $this = $('#note'+new_id);
+
+		// fadeIn note & focus
+		setTimeout(function() {
+			$this.removeClass('transparent').find('.nota-text').focus();
+		}, 200);
+
+		// clean input and hide btn
+		$('#add').val('');
+
+		// store added note
+		setLocalStorage($this);
+
+		// store next id
+		var next_id = localStorage.setItem('last-id', new_id);
+
+		setNoteActive();
+		setTimeout(function() {
+			$this.click();
+		}, 200);
+
+		// reiniciar o localStorage
+		$this.find('.nota-title, .nota-text').keyup(function() {
+			hideEmptyfields($(this));
+			setLocalStorage($this);
+		});
+		deleteNote();
+	}
+};
+
+function toggleAddBtn() {
+
 	$('#add').keyup(function() {
 
 		var value = $('#add').val();
@@ -186,7 +213,7 @@ function addNote() {
 			$('#add-btn').removeClass('transparent');
 		}
 	});
-}
+};
 
 
 
