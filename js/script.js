@@ -4,6 +4,7 @@ document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() {
     alert('Device ready!');
+    checkLanguage();
 }
 function checkLanguage() {
   	navigator.globalization.getPreferredLanguage(
