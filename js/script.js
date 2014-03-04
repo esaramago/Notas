@@ -4,7 +4,7 @@ document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() {
     alert('Device ready!');
-    $('#teste').on('click', funtion() {
+    $('#teste').on('click', function() {
     	alert('carreguei');
     	checkLanguage();
     	
