@@ -26,6 +26,9 @@ $(function() {
 	$('#add').focus(function() {
 		setNoteInactive();
 	});
+	$('.notas-overlay').on('click', function() {
+		setNoteInactive();
+	});
 
 	$('.nota-title, .nota-text').keyup(function() {
 		hideEmptyfields($(this));
@@ -139,12 +142,14 @@ function setNoteActive() {
 			};
 		}, 50);
 
+		$('.notas-overlay').removeClass('hidden');
 	});
 };
 
 
 function setNoteInactive() {
 	$('.nota-thumb').removeClass('current');
+	$('.notas-overlay').addClass('hidden');
 };
 
 
