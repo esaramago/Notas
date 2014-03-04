@@ -4,7 +4,11 @@ document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() {
     alert('Device ready!');
-    checkLanguage();
+    $('#teste').on('click', funtion() {
+    	alert('carreguei');
+    	checkLanguage();
+    	
+    })
 }
 function checkLanguage() {
   	navigator.globalization.getPreferredLanguage(
