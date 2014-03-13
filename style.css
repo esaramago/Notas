@@ -167,6 +167,7 @@ body {
 .notas-list {
 	position: relative;
 	width: 102%;
+	height: 90%; /* mais ou menos */
 }
 .notas-overlay {
 	position: absolute;
