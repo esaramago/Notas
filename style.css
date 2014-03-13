@@ -69,7 +69,7 @@ body {
 	height: 100%;
 	width: 100%;
 	box-sizing: border-box;
-	padding: 60px 14px 14px;
+	padding: 54px 14px 14px;
 }
 
 .box-skin {
@@ -167,6 +167,7 @@ body {
 .notas-list {
 	position: relative;
 	width: 102%;
+	height: 90%; /* mais ou menos */
 }
 .notas-overlay {
 	position: absolute;

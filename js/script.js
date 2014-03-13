@@ -8,14 +8,14 @@ function onDeviceReady() {
     	alert('carreguei');
     	checkLanguage();
     });*/
-    checkLanguage();
+    //checkLanguage();
 }
-function checkLanguage() {
+/*function checkLanguage() {
   	navigator.globalization.getPreferredLanguage(
 	    function (language) {alert('language: ' + language.value + '\n');},
 	    function () {alert('Error getting language\n');}
 	);
-}
+}*/
 
 
 $(function() {
@@ -49,6 +49,11 @@ $(function() {
 
 });
 
+$(window).resize(function(){
+	$('.nota-thumb').css('float', 'left');
+	displayThumbs();
+});
+
 
 // ===========================================================================================
 // Organizar caixas no layout
@@ -64,11 +69,6 @@ function displayThumbs() {
 		if ( distance < 0 ) {
 			prev_el.css('float', 'right');
 		}
-	});
-
-	$(window).resize(function(){
-		$('.nota-thumb').css('float', 'left');
-		displayThumbs();
 	});
 };
 
