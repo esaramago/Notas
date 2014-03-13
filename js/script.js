@@ -49,6 +49,11 @@ $(function() {
 
 });
 
+$(window).resize(function(){
+	$('.nota-thumb').css('float', 'left');
+	displayThumbs();
+});
+
 
 // ===========================================================================================
 // Organizar caixas no layout
@@ -66,11 +71,6 @@ function displayThumbs() {
 		}
 	});
 };
-
-$(window).resize(function(){
-	$('.nota-thumb').css('float', 'left');
-	displayThumbs();
-});
 
 
 
