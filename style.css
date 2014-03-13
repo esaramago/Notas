@@ -137,9 +137,7 @@ body {
 }
 
 .add-form {
-	position: absolute;
-	z-index: 2;
-	width: 100%;
+	position: relative;
 }
 #add {
 	width: 100%;
@@ -169,9 +167,6 @@ body {
 .notas-list {
 	position: relative;
 	width: 102%;
-	height: 100%;
-	box-sizing: border-box;
-	padding-top: 50px;
 }
 .notas-overlay {
 	position: absolute;
