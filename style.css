@@ -180,7 +180,7 @@ body {
 	float: left;
 	overflow: hidden;
 	width: 48%;
-	max-height: 200px;
+	max-height: 150px;
 	margin-right: 2%;
 	margin-bottom: 2%;
 	opacity: 1;
@@ -227,6 +227,11 @@ body {
 }
 .nota-thumb.current .nota-delete {
 	display: block;
+}
+
+.nota-text,
+.nota-title {
+	white-space: normal;
 }
 .nota-title {
 	padding-right: 30px;
