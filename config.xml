@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<widget id="com.esaramago.notas" version="0.0.3">
+<widget xmlns = "http://wwww.w3.org/ns/widgets"
+		xmlns:gap = "http://phonegap.com/ns/1.0"
+		id="com.esaramago.notas"
+		version="0.0.4">
 
 	<!--<preference name="phonegap-version" value="2.9.0"/>-->
 
