@@ -3,11 +3,11 @@ var watchID = null;
 document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() {
-    alert('Device ready!');
-    /*$('#teste').on('click', function() {
+    //alert('Device ready!');
+    $('#teste').on('click', function() {
     	alert('carreguei');
     	checkLanguage();
-    });*/
+    });
     //checkLanguage();
 }
 /*function checkLanguage() {
