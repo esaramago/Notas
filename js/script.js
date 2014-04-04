@@ -1,21 +1,20 @@
-
 var watchID = null;
 document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() {
     //alert('Device ready!');
-    /*$('#teste').on('click', function() {
+    $('.logo').on('click', function() {
     	alert('carreguei');
     	checkLanguage();
-    });*/
+    });
     //checkLanguage();
 }
-/*function checkLanguage() {
+function checkLanguage() {
   	navigator.globalization.getPreferredLanguage(
 	    function (language) {alert('language: ' + language.value + '\n');},
 	    function () {alert('Error getting language\n');}
 	);
-}*/
+}
 
 
 $(function() {
